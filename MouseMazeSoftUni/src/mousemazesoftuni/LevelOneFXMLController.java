@@ -11,6 +11,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 /**
  * FXML Controller class
@@ -19,7 +21,11 @@ import javafx.scene.control.Button;
  */
 public class LevelOneFXMLController implements Initializable {
     @FXML
-    private Button startButton;
+    private Rectangle gameField;
+    @FXML
+    private Button endButton;
+    @FXML
+    private Circle circle_1;
 
     /**
      * Initializes the controller class.

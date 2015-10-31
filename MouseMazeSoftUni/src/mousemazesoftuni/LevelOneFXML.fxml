@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,9 +9,42 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="507.0" prefWidth="677.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="mousemazesoftuni.LevelOneFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mousemazesoftuni.LevelOneFXMLController">
    <children>
-      <Button fx:id="startButton" layoutX="29.0" layoutY="30.0" mnemonicParsing="false" onAction="#onStart" text="Start" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="611.0" layoutX="604.0" stroke="BLACK" strokeType="INSIDE" width="196.0" />
+      <Rectangle fx:id="gameField" arcHeight="5.0" arcWidth="5.0" fill="#055cae" height="606.0" stroke="BLACK" strokeType="INSIDE" width="607.0" />
+      <Button fx:id="endButton" layoutX="491.0" layoutY="548.0" mnemonicParsing="false" onAction="#onStart" prefHeight="24.0" prefWidth="39.0" text="END">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
+      <Group layoutX="1.0" layoutY="1.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="6.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="606.0" layoutX="601.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="9.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="611.0" layoutX="796.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="602.0" layoutY="606.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="602.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="-2.0" layoutY="606.0" stroke="BLACK" strokeType="INSIDE" width="607.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="606.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
+            <ToggleButton layoutX="28.0" layoutY="20.0" mnemonicParsing="false" text="START">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </ToggleButton>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="89.0" layoutY="7.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="16.0" layoutX="-1.0" layoutY="229.0" stroke="BLACK" strokeType="INSIDE" width="290.0" />
+            <Rectangle arcHeight="100.0" arcWidth="5.0" height="222.0" layoutX="213.0" layoutY="34.0" rotate="148.5" stroke="BLACK" strokeDashOffset="100.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="100.0" strokeType="INSIDE" width="22.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="18.0" layoutX="159.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="344.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="374.0" layoutX="508.0" layoutY="-17.0" rotate="28.3" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="127.0" layoutY="262.0" stroke="BLACK" strokeType="INSIDE" width="338.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="269.0" layoutX="112.0" layoutY="237.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+            <Circle fx:id="circle_1" fill="RED" layoutX="47.0" layoutY="183.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="46.0" layoutX="76.0" layoutY="299.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="46.0" layoutX="126.0" layoutY="299.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="46.0" layoutX="173.0" layoutY="299.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="46.0" layoutX="224.0" layoutY="299.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+         </children>
+      </Group>
    </children>
 </AnchorPane>
