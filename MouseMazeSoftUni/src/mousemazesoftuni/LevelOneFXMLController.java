@@ -8,6 +8,8 @@ package mousemazesoftuni;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.PathTransition;
+import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -19,7 +21,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.Path;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.VLineTo;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -40,11 +45,32 @@ public class LevelOneFXMLController implements Initializable {
     @FXML
     private Rectangle rectangle_1;
     @FXML
+    private Rectangle rectangle_2;
+    @FXML
+    private Rectangle rectangle_3;
+    @FXML
+    private Rectangle rectangle_4;
+    @FXML
     private ToggleButton startButton;
     /**
      * Initializes the controller class.
      */
+    
+    //Scale objects
     ScaleTransition st1 = new ScaleTransition();
+    
+    
+    //Rotate objects
+    RotateTransition rt1=new RotateTransition();
+    
+    
+    //Move objects
+    PathTransition pt1=new PathTransition();
+    PathTransition pt2=new PathTransition();
+    PathTransition pt3=new PathTransition();
+    PathTransition pt4=new PathTransition();
+    
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -65,11 +91,69 @@ public class LevelOneFXMLController implements Initializable {
         st1.setNode(circle_1);
         st1.setDuration(Duration.seconds(2.0));
         st1.setCycleCount(Timeline.INDEFINITE);
-        st1.setByX(3.5);
-        st1.setByY(3.5);
+        st1.setByX(-2);
+        st1.setByY(-2);
+        st1.setAutoReverse(true);
         st1.play();
         
-       
+        Path pt1Path=new Path();
+        pt1Path.getElements().add(new MoveTo(30,12));
+        pt1Path.getElements().add(new VLineTo(178));
+        pt1.setNode(rectangle_1);
+        pt1.setDuration(Duration.seconds(3.0));
+        pt1.setCycleCount(Timeline.INDEFINITE);
+        pt1.setPath(pt1Path);
+        pt1.setAutoReverse(true);
+        pt1.play();
+        
+        
+        Path pt2Path=new Path();
+        pt2Path.getElements().add(new MoveTo(30,12));
+        pt2Path.getElements().add(new VLineTo(53));
+        pt2.setNode(rectangle_2);
+        pt2.setDuration(Duration.seconds(2.6));
+        pt2.setCycleCount(Timeline.INDEFINITE);
+        pt2.setPath(pt2Path);
+        pt2.setAutoReverse(true);
+        pt2.play();
+               
+        Path pt3Path=new Path();
+        pt3Path.getElements().add(new MoveTo(30,12));
+        pt3Path.getElements().add(new VLineTo(53));
+        pt3.setNode(rectangle_3);
+        pt3.setDuration(Duration.seconds(2.3));
+        pt3.setCycleCount(Timeline.INDEFINITE);
+        pt3.setPath(pt3Path);
+        pt3.setAutoReverse(true);
+        pt3.play();
+        
+        Path pt4Path=new Path();
+        pt4Path.getElements().add(new MoveTo(30,12));
+        pt4Path.getElements().add(new VLineTo(53));
+        pt4.setNode(rectangle_4);
+        pt4.setDuration(Duration.seconds(2.0));
+        pt4.setCycleCount(Timeline.INDEFINITE);
+        pt4.setPath(pt4Path);
+        pt4.setAutoReverse(true);
+        pt4.play();
+       /*
+       rt12.setNode(obst12);
+        rt12.setDuration(Duration.seconds(2.0));
+        rt12.setFromAngle(-15);
+        rt12.setByAngle(30);
+        rt12.setCycleCount(Timeline.INDEFINITE);
+        rt12.setAutoReverse(true);
+        rt12.playFrom(Duration.seconds(1.0));
+        */
+       /*
+         rt1.setNode(rectangle_2);
+        rt1.setDuration(Duration.seconds(2.0));
+        rt1.setFromAngle(-15);
+        rt1.setByAngle(30);
+        rt1.setCycleCount(Timeline.INDEFINITE);
+        rt1.setAutoReverse(true);
+        rt1.playFrom(Duration.seconds(1.0));
+       */
     }
     private void stopGame(){
         startButton.setSelected(false);
