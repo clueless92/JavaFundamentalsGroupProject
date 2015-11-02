@@ -112,7 +112,7 @@ public class LevelTwoFXMLController implements Initializable, EventHandler<Windo
     public int hours = 0;
     public int min = 0;
     public int sec = 0;
-    private class UpdateTimer implements EventHandler<ActionEvent> {
+    class UpdateTimer implements EventHandler<ActionEvent> {
 
         @Override
         public void handle(ActionEvent event) {
@@ -140,7 +140,7 @@ public class LevelTwoFXMLController implements Initializable, EventHandler<Windo
 
         Parent root = FXMLLoader.load(getClass().getResource("Dialog.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = new Stage();
+        stage = new Stage();
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);
@@ -271,7 +271,7 @@ public class LevelTwoFXMLController implements Initializable, EventHandler<Windo
         toggleStart.setText("Start!");
         Parent root = FXMLLoader.load(getClass().getResource("Dialog.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = new Stage();
+        stage = new Stage();
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);

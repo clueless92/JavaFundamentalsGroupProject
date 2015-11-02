@@ -51,6 +51,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="34.0" layoutX="269.0" layoutY="369.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="49.0" layoutX="428.0" layoutY="322.0" stroke="BLACK" strokeType="INSIDE" width="179.0" />
             <Rectangle fx:id="rectangle_1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="23.0" layoutX="99.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="61.0" />
+            <Button layoutX="21.0" layoutY="567.0" mnemonicParsing="false" onAction="#close" text="TestClose" />
          </children>
       </Group>
    </children>

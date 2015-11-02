@@ -90,4 +90,9 @@ public class LevelOneFXMLController implements Initializable {
         stage.show();
     }
 
+    @FXML
+    private void close(ActionEvent event) {
+        stage.close();
+    }
+
 }
