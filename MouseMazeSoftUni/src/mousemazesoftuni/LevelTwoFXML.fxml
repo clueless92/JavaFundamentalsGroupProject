@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseExited="#onMouseExitedPane" prefHeight="627.0" prefWidth="897.0" style="-fx-background-color: #1f51ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mousemazesoftuni.LevelTwoFXMLController">
+   <children>
+      <Rectangle fx:id="gameField" arcHeight="5.0" arcWidth="5.0" fill="#1f51ff" height="627.0" onMouseExited="#onMouseExited" stroke="#1f51ff" strokeType="INSIDE" width="677.0">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </Rectangle>
+      <Rectangle fx:id="obst6" arcHeight="5.0" arcWidth="5.0" fill="RED" height="30.0" layoutX="593.0" layoutY="614.0" stroke="RED" strokeType="INSIDE" width="90.0" />
+      <Rectangle fx:id="obst7" arcHeight="5.0" arcWidth="5.0" fill="RED" height="30.0" layoutX="593.0" layoutY="614.0" stroke="RED" strokeType="INSIDE" width="90.0" />
+      <ToggleButton fx:id="toggleStart" focusTraversable="false" layoutX="19.0" layoutY="19.0" mnemonicParsing="false" onAction="#toggleStartAction" onDragDetected="#onDragDetected" text="Start!" textFill="#1f51ff">
+         <effect>
+            <InnerShadow choke="0.69" color="#1f51ff" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ToggleButton>
+      <Arc fx:id="obst3" fill="RED" layoutX="43.0" layoutY="299.0" length="270.0" radiusX="50.0" radiusY="50.0" startAngle="-90.0" stroke="RED" strokeType="INSIDE" type="ROUND" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="288.0" layoutX="73.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="54.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="25.0" layoutX="1.0" layoutY="325.0" stroke="BLACK" strokeType="INSIDE" width="188.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="326.0" layoutX="146.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="54.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="25.0" layoutY="613.0" stroke="BLACK" strokeType="INSIDE" width="687.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="625.0" layoutX="677.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="3.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="677.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="390.0" layoutX="316.0" layoutY="-24.0" rotate="-45.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="260.0" layoutX="372.0" layoutY="-44.0" rotate="-45.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="25.0" layoutX="406.0" layoutY="56.0" rotate="-45.0" stroke="BLACK" strokeType="INSIDE" width="180.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="180.0" layoutX="598.0" layoutY="-18.0" rotate="-45.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="190.0" layoutX="506.0" layoutY="148.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="152.0" layoutX="562.0" layoutY="185.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="30.0" layoutX="522.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="72.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="202.0" layoutX="522.0" layoutY="335.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="20.0" layoutX="522.0" layoutY="382.0" stroke="BLACK" strokeType="INSIDE" width="72.0" />
+      <Rectangle fx:id="obst9" arcHeight="5.0" arcWidth="5.0" fill="RED" height="10.0" layoutX="53.0" layoutY="521.0" stroke="RED" strokeType="INSIDE" width="444.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="31.0" layoutX="47.0" layoutY="521.0" stroke="BLACK" strokeType="INSIDE" width="547.0" />
+      <Rectangle fx:id="obst5" arcHeight="5.0" arcWidth="5.0" fill="RED" height="270.0" layoutX="539.0" stroke="RED" strokeType="INSIDE" width="25.0" />
+      <Rectangle fx:id="obst4" arcHeight="5.0" arcWidth="5.0" fill="RED" height="25.0" layoutX="417.0" layoutY="123.0" stroke="RED" strokeType="INSIDE" width="270.0" />
+      <Rectangle fx:id="obst8" arcHeight="5.0" arcWidth="5.0" fill="RED" height="58.0" layoutX="65.0" layoutY="554.0" stroke="RED" strokeType="INSIDE" width="30.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="48.0" layoutX="6.0" layoutY="434.0" stroke="BLACK" strokeType="INSIDE" width="491.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="18.0" layoutX="104.0" layoutY="371.0" stroke="BLACK" strokeType="INSIDE" width="425.0" />
+      <Rectangle fx:id="obst12" arcHeight="5.0" arcWidth="5.0" fill="RED" height="20.0" layoutX="104.0" layoutY="401.0" stroke="RED" strokeType="INSIDE" width="125.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="165.0" layoutX="352.0" layoutY="211.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
+      <Rectangle fx:id="obst11" arcHeight="5.0" arcWidth="5.0" fill="RED" height="20.0" layoutX="236.0" layoutY="401.0" stroke="RED" strokeType="INSIDE" width="125.0" />
+      <Rectangle fx:id="obst10" arcHeight="5.0" arcWidth="5.0" fill="RED" height="20.0" layoutX="368.0" layoutY="401.0" stroke="RED" strokeType="INSIDE" width="125.0" />
+      <Label fx:id="labelBridge" focusTraversable="false" layoutX="213.0" layoutY="216.0" onMouseEntered="#onMouseEnteredLabel" opacity="0.0" prefHeight="64.0" prefWidth="125.0" text="Hmm.. try using a bridge?" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="625.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Button fx:id="buttonRealEnd" focusTraversable="false" layoutX="441.0" layoutY="338.0" mnemonicParsing="false" onAction="#onRealEnd" opacity="0.0" prefHeight="25.0" prefWidth="72.0" text="Real Finish" textFill="#1f51ff">
+         <effect>
+            <InnerShadow choke="0.69" color="#1f51ff" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="20.0" layoutX="522.0" layoutY="427.0" stroke="BLACK" strokeType="INSIDE" width="72.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="20.0" layoutX="522.0" layoutY="473.0" stroke="BLACK" strokeType="INSIDE" width="72.0" />
+      <Label layoutX="697.0" layoutY="57.0" prefHeight="152.0" prefWidth="202.0" text="Целта на играта е да стигнете до финала за минимално време, без да допирате центъра на курсора до черните стени или червените препятствия. Успех!" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Button fx:id="buttonFakeEnd" focusTraversable="false" layoutX="298.0" layoutY="338.0" mnemonicParsing="false" onAction="#onFakeEnd" text="Finish" textFill="#1f51ff">
+         <effect>
+            <InnerShadow choke="0.69" color="#1f51ff" />
+         </effect>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="---МОСТ---" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="chronoLabel" layoutX="701.0" layoutY="-4.0" prefHeight="71.0" prefWidth="194.0" text=" 00 : 00 : 00 " textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Circle fx:id="obst13" fill="RED" layoutX="317.0" layoutY="88.0" radius="10.0" stroke="RED" strokeType="INSIDE" />
+      <Label fx:id="fakeWinLabel" layoutX="142.0" layoutY="450.0" opacity="0.0" text="Това не беше истинския финал, но другия е. Обещавам!" textFill="WHITE" />
+      <Rectangle fx:id="obst1" fill="RED" height="30.0" layoutX="7.0" layoutY="110.0" stroke="RED" strokeType="INSIDE" width="106.0" />
+      <Rectangle fx:id="obst2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="30.0" layoutX="88.0" layoutY="156.0" stroke="RED" strokeType="INSIDE" width="106.0" />
+      <TextArea fx:id="scoreboardArea" editable="false" focusTraversable="false" layoutX="697.0" layoutY="255.0" prefHeight="202.0" prefWidth="200.0" />
+      <Button fx:id="clearSB" focusTraversable="false" layoutX="837.0" layoutY="466.0" mnemonicParsing="false" onAction="#onBoardClear" text="Изчисти" textFill="#1f51ff">
+         <effect>
+            <InnerShadow choke="0.69" color="#1f51ff" />
+         </effect></Button>
+      <Label layoutX="697.0" layoutY="233.0" text="Топ 10:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button focusTraversable="false" layoutX="837.0" layoutY="601.0" mnemonicParsing="false" onAction="#onExit" prefWidth="62.0" text="Изход" textFill="#1f51ff">
+         <effect>
+            <InnerShadow choke="0.69" color="#1f51ff" />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

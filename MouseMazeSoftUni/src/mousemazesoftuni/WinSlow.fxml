@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mousemazesoftuni.WinSlowController">
+   <children>
+      <Label layoutX="13.0" prefHeight="60.0" prefWidth="319.0" text="Поздравления! Спечелихте тази картинка на щастлива пица!" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="292.0" fitWidth="293.0" layoutX="27.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/pizzabig.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="27.0" layoutY="366.0" prefHeight="36.0" prefWidth="292.0" text="Резултата ви не беше достатъчно добър за да се класирате в топ 10." textAlignment="JUSTIFY" wrapText="true" />
+      <Button layoutX="209.0" layoutY="416.0" mnemonicParsing="false" onAction="#ok" prefHeight="25.0" prefWidth="52.0" text="ОК">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Label layoutX="27.0" layoutY="420.0" text="Опитайте отново?" />
+      <Button layoutX="269.0" layoutY="416.0" mnemonicParsing="false" onAction="#onExit" text="Изход">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

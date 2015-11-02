@@ -12,12 +12,18 @@ import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import static mousemazesoftuni.StartWindowFXMLController.stage;
 
 /**
  * FXML Controller class
@@ -73,7 +79,15 @@ public class LevelOneFXMLController implements Initializable {
     }
 
     @FXML
-    private void onStart(ActionEvent event) {
+    private void onEnd(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("LevelTwoFXML.fxml"));
+        Scene scene = new Scene(root);
+        stage = new Stage();
+        stage.setScene(scene);
+        //stage.setOnHidden(this);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setResizable(false);
+        stage.show();
     }
 
 }
