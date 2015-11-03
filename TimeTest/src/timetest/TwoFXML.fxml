@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="timetest.TwoFXMLController">
+   <children>
+      <ToggleButton fx:id="toggleStart" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onToggleStart" text="Start" />
+      <Button fx:id="finishButton" layoutX="539.0" layoutY="361.0" mnemonicParsing="false" onAction="#onFinish" text="Finish" />
+      <Label fx:id="chronoLabel" layoutX="243.0" layoutY="183.0" text="00 : 00 : 00">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
