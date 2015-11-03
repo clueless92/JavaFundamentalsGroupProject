@@ -67,5 +67,19 @@
             <ClosePath />
          </elements>
       </Path>
+      <Path fill="RED" layoutX="411.0" layoutY="377.0" stroke="RED" strokeType="INSIDE">
+         <elements>
+            <MoveTo x="-20.0" y="10.0" />
+            <ArcTo radiusX="20.0" radiusY="20.0" x="180.0" />
+            <ArcTo radiusX="20.0" radiusY="20.0" x="-20.0" y="-10.0" />
+            <HLineTo x="5.0" />
+            <QuadCurveTo controlX="20.0" controlY="-80.0" x="80.0" y="-80.0" />
+            <QuadCurveTo controlX="150.0" controlY="-80.0" x="155.0" y="-10.0" />
+            <VLineTo y="10.0" />
+            <QuadCurveTo controlX="150.0" controlY="80.0" x="80.0" y="80.0" />
+            <QuadCurveTo controlX="20.0" controlY="80.0" x="5.0" y="10.0" />
+            <ClosePath />
+         </elements>
+      </Path>
    </children>
 </AnchorPane>
