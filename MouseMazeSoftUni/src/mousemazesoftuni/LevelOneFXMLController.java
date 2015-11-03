@@ -13,13 +13,16 @@ import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
@@ -27,6 +30,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.VLineTo;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import static mousemazesoftuni.StartWindowFXMLController.stage;
 
@@ -35,7 +39,7 @@ import static mousemazesoftuni.StartWindowFXMLController.stage;
  *
  */
 
-public class LevelOneFXMLController implements Initializable {
+public class LevelOneFXMLController implements Initializable, EventHandler<WindowEvent>{
     @FXML
     private Rectangle gameField;
     @FXML
@@ -50,6 +54,8 @@ public class LevelOneFXMLController implements Initializable {
     private Rectangle rectangle_3;
     @FXML
     private Rectangle rectangle_4;
+    @FXML
+    private Rectangle rectangle_5;
     @FXML
     private ToggleButton startButton;
     /**
@@ -69,6 +75,7 @@ public class LevelOneFXMLController implements Initializable {
     PathTransition pt2=new PathTransition();
     PathTransition pt3=new PathTransition();
     PathTransition pt4=new PathTransition();
+   
     
     
     
@@ -100,7 +107,7 @@ public class LevelOneFXMLController implements Initializable {
         pt1Path.getElements().add(new MoveTo(30,12));
         pt1Path.getElements().add(new VLineTo(178));
         pt1.setNode(rectangle_1);
-        pt1.setDuration(Duration.seconds(3.0));
+        pt1.setDuration(Duration.seconds(2.0));
         pt1.setCycleCount(Timeline.INDEFINITE);
         pt1.setPath(pt1Path);
         pt1.setAutoReverse(true);
@@ -111,7 +118,7 @@ public class LevelOneFXMLController implements Initializable {
         pt2Path.getElements().add(new MoveTo(30,12));
         pt2Path.getElements().add(new VLineTo(53));
         pt2.setNode(rectangle_2);
-        pt2.setDuration(Duration.seconds(2.6));
+        pt2.setDuration(Duration.seconds(0.7));
         pt2.setCycleCount(Timeline.INDEFINITE);
         pt2.setPath(pt2Path);
         pt2.setAutoReverse(true);
@@ -121,7 +128,7 @@ public class LevelOneFXMLController implements Initializable {
         pt3Path.getElements().add(new MoveTo(30,12));
         pt3Path.getElements().add(new VLineTo(53));
         pt3.setNode(rectangle_3);
-        pt3.setDuration(Duration.seconds(2.3));
+        pt3.setDuration(Duration.seconds(0.6));
         pt3.setCycleCount(Timeline.INDEFINITE);
         pt3.setPath(pt3Path);
         pt3.setAutoReverse(true);
@@ -131,7 +138,7 @@ public class LevelOneFXMLController implements Initializable {
         pt4Path.getElements().add(new MoveTo(30,12));
         pt4Path.getElements().add(new VLineTo(53));
         pt4.setNode(rectangle_4);
-        pt4.setDuration(Duration.seconds(2.0));
+        pt4.setDuration(Duration.seconds(0.5));
         pt4.setCycleCount(Timeline.INDEFINITE);
         pt4.setPath(pt4Path);
         pt4.setAutoReverse(true);
@@ -145,20 +152,44 @@ public class LevelOneFXMLController implements Initializable {
         rt12.setAutoReverse(true);
         rt12.playFrom(Duration.seconds(1.0));
         */
-       /*
-         rt1.setNode(rectangle_2);
+       
+        rt1.setNode(rectangle_5);
         rt1.setDuration(Duration.seconds(2.0));
-        rt1.setFromAngle(-15);
-        rt1.setByAngle(30);
+        rt1.setFromAngle(-20);
+        rt1.setByAngle(43);
         rt1.setCycleCount(Timeline.INDEFINITE);
         rt1.setAutoReverse(true);
         rt1.playFrom(Duration.seconds(1.0));
-       */
+       
+    }
+    
+     private static boolean contains(Labeled labeled, double x, double y) {
+        double tolerance = 2.0;
+        double left = labeled.getLayoutX() - tolerance;
+        double right = left + labeled.getWidth() + 2 * tolerance;
+        double top = labeled.getLayoutY() - tolerance;
+        double bottom = top + labeled.getHeight() + 2 * tolerance;
+        return left <= x && x <= right && top <= y && y <= bottom;
     }
     private void stopGame(){
         startButton.setSelected(false);
         st1.jumpTo(Duration.ZERO);
         st1.stop();
+        
+        pt1.jumpTo(Duration.ZERO);
+        pt1.stop();
+        
+        pt2.jumpTo(Duration.ZERO);
+        pt2.stop();
+        
+        pt3.jumpTo(Duration.ZERO);
+        pt3.stop();
+        
+        pt4.jumpTo(Duration.ZERO);
+        pt4.stop();
+        
+        rt1.jumpTo(Duration.seconds(1));
+        rt1.stop();
        
     }
 
@@ -177,6 +208,37 @@ public class LevelOneFXMLController implements Initializable {
     @FXML
     private void close(ActionEvent event) {
         stage.close();
+    }
+
+    @Override
+    public void handle(WindowEvent event) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @FXML
+    private void onMouseExited(MouseEvent event) throws IOException {
+         if (!startButton.isSelected()) {
+            return;
+        }
+        double fieldX = gameField.getLayoutX();
+        double fieldY = gameField.getLayoutY();
+        double x = event.getX() + fieldX;
+        double y = event.getY() + fieldY;
+        if (contains(startButton, x, y)) {
+            return;
+        }
+        if (contains(endButton, x, y)) {
+            return;
+        } 
+        stopGame();
+        startButton.setText("Start!");
+        Parent root = FXMLLoader.load(getClass().getResource("Dialog.fxml"));
+        Scene scene = new Scene(root);
+        stage = new Stage();
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setResizable(false);
+        stage.show();
     }
 
 }

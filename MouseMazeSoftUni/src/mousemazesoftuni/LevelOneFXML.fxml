@@ -11,7 +11,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mousemazesoftuni.LevelOneFXMLController">
    <children>
-      <Rectangle fx:id="gameField" arcHeight="5.0" arcWidth="5.0" fill="#055cae" height="606.0" stroke="BLACK" strokeType="INSIDE" width="607.0" />
+      <Rectangle fx:id="gameField" arcHeight="5.0" arcWidth="5.0" fill="#055cae" height="606.0" onMouseExited="#onMouseExited" stroke="BLACK" strokeType="INSIDE" width="607.0">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor></Rectangle>
       <Button fx:id="endButton" layoutX="491.0" layoutY="548.0" mnemonicParsing="false" onAction="#onEnd" prefHeight="24.0" prefWidth="39.0" text="END">
          <font>
             <Font size="9.0" />
@@ -20,7 +23,7 @@
       <Rectangle fx:id="rectangle_1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="23.0" layoutX="98.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="63.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="606.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="88.0" layoutY="7.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="210.0" layoutX="212.0" layoutY="39.0" rotate="148.6" stroke="BLACK" strokeDashOffset="100.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="100.0" strokeType="INSIDE" width="10.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="193.0" layoutX="190.0" layoutY="45.0" rotate="161.6" stroke="BLACK" strokeDashOffset="100.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="100.0" strokeType="INSIDE" width="10.0" />
       <Group layoutX="-1.0" layoutY="5.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="269.0" layoutX="120.0" layoutY="236.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" width="37.0" />
@@ -39,18 +42,20 @@
          </font>
       </ToggleButton>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="-2.0" layoutY="229.0" stroke="BLACK" strokeType="INSIDE" width="278.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="606.0" layoutX="600.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="9.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="-3.0" layoutY="606.0" stroke="BLACK" strokeType="INSIDE" width="607.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="126.0" layoutY="254.0" stroke="BLACK" strokeType="INSIDE" width="416.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="611.0" layoutX="795.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="601.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="601.0" layoutY="606.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
       <Button layoutX="20.0" layoutY="567.0" mnemonicParsing="false" onAction="#close" text="TestClose" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="18.0" layoutX="160.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="344.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="160.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="344.0" />
       <Rectangle fx:id="rectangle_2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="19.0" layoutX="183.0" layoutY="-44.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="67.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="265.0" layoutX="540.0" layoutY="7.0" stroke="BLACK" strokeType="INSIDE" width="67.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="611.0" layoutX="604.0" stroke="BLACK" strokeType="INSIDE" width="196.0" />
       <Rectangle fx:id="rectangle_3" arcHeight="5.0" arcWidth="5.0" fill="RED" height="19.0" layoutX="272.0" layoutY="-44.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="67.0" />
       <Rectangle fx:id="rectangle_4" arcHeight="5.0" arcWidth="5.0" fill="RED" height="19.0" layoutX="375.0" layoutY="-44.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="67.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="193.0" layoutX="271.0" layoutY="46.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Rectangle fx:id="rectangle_5" arcHeight="5.0" arcWidth="5.0" fill="RED" height="25.0" layoutX="280.0" layoutY="151.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="522.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="257.0" layoutX="540.0" layoutY="7.0" stroke="BLACK" strokeType="INSIDE" width="67.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="611.0" layoutX="604.0" stroke="BLACK" strokeType="INSIDE" width="196.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="611.0" layoutX="600.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
    </children>
 </AnchorPane>
