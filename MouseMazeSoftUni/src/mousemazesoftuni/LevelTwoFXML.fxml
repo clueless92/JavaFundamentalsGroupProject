@@ -100,16 +100,6 @@
       <Label fx:id="fakeWinLabel" layoutX="142.0" layoutY="450.0" opacity="0.0" text="Това не беше истинския финал, но другия е. Обещавам!" textFill="WHITE" />
       <Rectangle fx:id="obst1" fill="RED" height="30.0" layoutX="7.0" layoutY="110.0" stroke="RED" strokeType="INSIDE" width="106.0" />
       <Rectangle fx:id="obst2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="30.0" layoutX="88.0" layoutY="156.0" stroke="RED" strokeType="INSIDE" width="106.0" />
-      <TextArea fx:id="scoreboardArea" editable="false" focusTraversable="false" layoutX="697.0" layoutY="255.0" prefHeight="202.0" prefWidth="200.0" />
-      <Button fx:id="clearSB" focusTraversable="false" layoutX="837.0" layoutY="466.0" mnemonicParsing="false" onAction="#onBoardClear" text="Изчисти" textFill="#1f51ff">
-         <effect>
-            <InnerShadow choke="0.69" color="#1f51ff" />
-         </effect></Button>
-      <Label layoutX="697.0" layoutY="233.0" text="Топ 10:" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
       <Button focusTraversable="false" layoutX="837.0" layoutY="601.0" mnemonicParsing="false" onAction="#onExit" prefWidth="62.0" text="Изход" textFill="#1f51ff">
          <effect>
             <InnerShadow choke="0.69" color="#1f51ff" />

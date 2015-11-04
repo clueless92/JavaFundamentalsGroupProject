@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -9,6 +10,13 @@
 <AnchorPane id="AnchorPane" prefHeight="269.0" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mousemazesoftuni.StartWindowFXMLController">
     <children>
         <Button fx:id="startLevelOneButton" layoutX="14.0" layoutY="14.0" onAction="#onStartLevelOne" text="Level 1" />
-      <TextArea fx:id="scoreboardArea" layoutX="106.0" layoutY="35.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="scoreboardArea" editable="false" focusTraversable="false" layoutX="106.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="106.0" layoutY="230.0" mnemonicParsing="false" onAction="#onClear" text="Clear scoreboard" />
+      <Button layoutX="271.0" layoutY="230.0" mnemonicParsing="false" onAction="#onExit" text="Exit" />
+      <Label layoutX="42.0" layoutY="64.0" text="Топ 10:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

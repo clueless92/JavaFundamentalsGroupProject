@@ -18,12 +18,12 @@ public class WinController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        long time = LevelTwoFXMLController.scoreboard.getEntryTime();
-        String timeString = LevelTwoFXMLController.scoreboard.toTimeString(time);
+        long time = StartWindowFXMLController.scoreboard.getEntryTime();
+        String timeString = StartWindowFXMLController.scoreboard.toTimeString(time);
         if (timeString != null) {
             timeLabel.setText(timeString);
         }
-        String name = LevelTwoFXMLController.scoreboard.getEntryName();
+        String name = StartWindowFXMLController.scoreboard.getEntryName();
         if (name != null) {
             nameField.setText(name);
         }
@@ -32,7 +32,8 @@ public class WinController implements Initializable {
     @FXML
     private void yes(ActionEvent event) {
         String name = nameField.getText();
-        LevelTwoFXMLController.scoreboard.submitEntry(name);
+        //LevelTwoFXMLController.scoreboard.submitEntry(name);
+        StartWindowFXMLController.scoreboard.submitEntry(name);
         stage.close();
     }
 

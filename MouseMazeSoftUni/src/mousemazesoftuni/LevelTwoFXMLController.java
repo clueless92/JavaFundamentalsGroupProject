@@ -1,10 +1,6 @@
 package mousemazesoftuni;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
@@ -23,7 +19,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -36,15 +31,11 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.VLineTo;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import static mousemazesoftuni.StartWindowFXMLController.stage;
 
-public class LevelTwoFXMLController implements Initializable, EventHandler<WindowEvent>, Scoreboard.Listener {
+public class LevelTwoFXMLController implements Initializable {
 
-    public static final String DATA_FILE_NAME = "data.ser";
-    //public static Stage stage;
-    public static Scoreboard scoreboard = null;
     @FXML
     public Label chronoLabel;
 
@@ -88,10 +79,6 @@ public class LevelTwoFXMLController implements Initializable, EventHandler<Windo
     private AnchorPane anchorPane;
     @FXML
     private Rectangle gameField;
-    @FXML
-    private TextArea scoreboardArea;
-    @FXML
-    private Button clearSB;
 
     PathTransition pt1 = new PathTransition();
     PathTransition pt2 = new PathTransition();
@@ -186,9 +173,6 @@ public class LevelTwoFXMLController implements Initializable, EventHandler<Windo
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        deserialize();
-        String scoreboardString = scoreboard.toString();
-        scoreboardArea.setText(scoreboardString);
     }
 
     @FXML
@@ -417,7 +401,7 @@ public class LevelTwoFXMLController implements Initializable, EventHandler<Windo
             return;
         }
         long time = sec + min * 60L + hours * 3600L;
-        if (scoreboard.requestEntry(time)) {
+        if (StartWindowFXMLController.scoreboard.requestEntry(time)) {
             fakeWinLabel.setOpacity(0.0);
             stopGame();
             toggleStart.setText("Start!");
@@ -426,7 +410,6 @@ public class LevelTwoFXMLController implements Initializable, EventHandler<Windo
             Scene scene = new Scene(root);
             stage = new Stage();
             stage.setScene(scene);
-            stage.setOnHidden(this);
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setResizable(false);
             stage.show();
@@ -439,7 +422,6 @@ public class LevelTwoFXMLController implements Initializable, EventHandler<Windo
             Scene scene = new Scene(root);
             stage = new Stage();
             stage.setScene(scene);
-            stage.setOnHidden(this);
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setResizable(false);
             stage.show();
@@ -455,67 +437,4 @@ public class LevelTwoFXMLController implements Initializable, EventHandler<Windo
         fakeWinLabel.setOpacity(1.0);
     }
 
-    @Override
-    public void handle(WindowEvent event) {
-        scoreboard.clearEntry();
-    }
-
-    @FXML
-    private void onBoardClear(ActionEvent event) {
-        scoreboard.clear();
-        String string = scoreboard.toString();
-        scoreboardArea.setText(string);
-        serialize();
-    }
-
-    @Override
-    public void onSubmitEntry() {
-        String scoreboardString = scoreboard.toString();
-        scoreboardArea.setText(scoreboardString);
-        serialize();
-    }
-
-    public void serialize() {
-        try {
-            ObjectOutputStream oos = null;
-            FileOutputStream fos = null;
-            try {
-                fos = new FileOutputStream(DATA_FILE_NAME);
-                oos = new ObjectOutputStream(fos);
-                oos.writeObject(scoreboard);
-            } finally {
-                if (oos != null) {
-                    oos.close();
-                } else if (fos != null) {
-                    fos.close();
-                }
-            }
-        } catch (Throwable t) {
-            t.printStackTrace();
-        }
-    }
-
-    public void deserialize() {
-        try {
-            ObjectInputStream ois = null;
-            FileInputStream fis = null;
-            try {
-                fis = new FileInputStream(DATA_FILE_NAME);
-                ois = new ObjectInputStream(fis);
-                scoreboard = (Scoreboard) ois.readObject();
-            } finally {
-                if (ois != null) {
-                    ois.close();
-                } else if (fis != null) {
-                    fis.close();
-                }
-            }
-        } catch (Throwable t) {
-            t.printStackTrace();
-        }
-        if (scoreboard == null) {
-            scoreboard = new Scoreboard();
-        }
-        scoreboard.setListener(this);
-    }
 }
