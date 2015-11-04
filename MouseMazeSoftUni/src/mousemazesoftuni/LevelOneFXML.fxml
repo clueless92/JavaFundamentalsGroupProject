@@ -81,5 +81,19 @@
             <ClosePath />
          </elements>
       </Path>
+      <Path fill="RED" layoutX="47.0" layoutY="481.0" stroke="RED" strokeType="INSIDE">
+         <elements>
+            <MoveTo x="-20.0" y="10.0" />
+            <ArcTo radiusX="20.0" radiusY="20.0" x="100.0" />
+            <ArcTo radiusX="20.0" radiusY="20.0" x="-20.0" y="-10.0" />
+            <HLineTo />
+            <QuadCurveTo controlX="10.0" controlY="-40.0" x="40.0" y="-42.0" />
+            <QuadCurveTo controlX="75.0" controlY="-40.0" x="80.0" y="-5.0" />
+            <VLineTo y="10.0" />
+            <QuadCurveTo controlX="75.0" controlY="40.0" x="40.0" y="42.0" />
+            <QuadCurveTo controlX="10.0" controlY="40.0" y="10.0" />
+            <ClosePath />
+         </elements>
+      </Path>
    </children>
 </AnchorPane>
