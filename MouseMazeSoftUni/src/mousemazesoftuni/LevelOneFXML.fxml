@@ -15,7 +15,7 @@
          <cursor>
             <Cursor fx:constant="CROSSHAIR" />
          </cursor></Rectangle>
-      <Button fx:id="endButton" layoutX="491.0" layoutY="548.0" mnemonicParsing="false" onAction="#onEnd" prefHeight="24.0" prefWidth="39.0" text="END">
+      <Button fx:id="endButton" layoutX="88.0" layoutY="500.0" mnemonicParsing="false" onAction="#onEnd" prefHeight="24.0" prefWidth="39.0" text="END">
          <font>
             <Font size="9.0" />
          </font>
@@ -47,7 +47,6 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="611.0" layoutX="795.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="601.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="601.0" layoutY="606.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Button layoutX="20.0" layoutY="567.0" mnemonicParsing="false" onAction="#close" text="TestClose" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="160.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="344.0" />
       <Rectangle fx:id="rectangle_2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="19.0" layoutX="183.0" layoutY="-44.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="67.0" />
       <Rectangle fx:id="rectangle_3" arcHeight="5.0" arcWidth="5.0" fill="RED" height="19.0" layoutX="272.0" layoutY="-44.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="67.0" />
@@ -57,31 +56,21 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="257.0" layoutX="540.0" layoutY="7.0" stroke="BLACK" strokeType="INSIDE" width="67.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="611.0" layoutX="604.0" stroke="BLACK" strokeType="INSIDE" width="196.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="611.0" layoutX="600.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
-      <Path fill="DODGERBLUE" layoutX="199.0" layoutY="501.0" stroke="BLACK" strokeType="INSIDE">
-         <elements>
-            <MoveTo x="-20.0" />
-            <ArcTo radiusX="20.0" radiusY="20.0" x="173.0" />
-            <ArcTo radiusX="20.0" radiusY="20.0" x="-20.0" y="-20.0" />
-            <LineTo y="-20.0" />
-            <CubicCurveTo controlX1="140.0" controlX2="140.0" controlY1="-220.0" controlY2="200.0" />
-            <ClosePath />
-         </elements>
-      </Path>
-      <Path fill="RED" layoutX="411.0" layoutY="377.0" stroke="RED" strokeType="INSIDE">
+      <Path fill="RED" layoutX="27.0" layoutY="499.0" stroke="RED" strokeType="INSIDE">
          <elements>
             <MoveTo x="-20.0" y="10.0" />
             <ArcTo radiusX="20.0" radiusY="20.0" x="180.0" />
             <ArcTo radiusX="20.0" radiusY="20.0" x="-20.0" y="-10.0" />
             <HLineTo x="5.0" />
             <QuadCurveTo controlX="20.0" controlY="-80.0" x="80.0" y="-80.0" />
-            <QuadCurveTo controlX="150.0" controlY="-80.0" x="155.0" y="-10.0" />
+            <QuadCurveTo controlX="150.0" controlY="-80.0" x="158.0" y="-10.0" />
             <VLineTo y="10.0" />
             <QuadCurveTo controlX="150.0" controlY="80.0" x="80.0" y="80.0" />
             <QuadCurveTo controlX="20.0" controlY="80.0" x="5.0" y="10.0" />
             <ClosePath />
          </elements>
       </Path>
-      <Path fill="RED" layoutX="47.0" layoutY="481.0" stroke="RED" strokeType="INSIDE">
+      <Path fill="RED" layoutX="69.0" layoutY="500.0" rotate="-180.0" stroke="RED" strokeType="INSIDE">
          <elements>
             <MoveTo x="-20.0" y="10.0" />
             <ArcTo radiusX="20.0" radiusY="20.0" x="100.0" />
@@ -95,5 +84,7 @@
             <ClosePath />
          </elements>
       </Path>
+      <Button layoutX="197.0" layoutY="574.0" mnemonicParsing="false" onAction="#close" text="TestClose" />
+      <Arc fill="RED" layoutX="109.0" layoutY="499.0" length="180.0" radiusX="35.0" radiusY="35.0" startAngle="270.0" stroke="RED" strokeType="INSIDE" type="ROUND" />
    </children>
 </AnchorPane>
