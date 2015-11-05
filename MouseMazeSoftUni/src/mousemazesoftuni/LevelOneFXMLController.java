@@ -17,13 +17,16 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.HLineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.shape.Rectangle;
@@ -46,6 +49,7 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
     private Button endButton;
     @FXML
     private Circle circle_1;
+    private Path circle_2; 
     @FXML
     private Rectangle rectangle_1;
     @FXML
@@ -57,7 +61,16 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
     @FXML
     private Rectangle rectangle_5;
     @FXML
+    private Group rectangle_6;
+    @FXML
+    private Rectangle rectangle_7;
+    @FXML
+    private Rectangle rectangle_8;
+    @FXML
+    private Rectangle rectangle_9;
+    @FXML
     private ToggleButton startButton;
+    
     /**
      * Initializes the controller class.
      */
@@ -68,17 +81,18 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
     
     //Rotate objects
     RotateTransition rt1=new RotateTransition();
-    
+    RotateTransition rt2=new RotateTransition();
+    RotateTransition rt3=new RotateTransition();
     
     //Move objects
     PathTransition pt1=new PathTransition();
     PathTransition pt2=new PathTransition();
     PathTransition pt3=new PathTransition();
     PathTransition pt4=new PathTransition();
+    PathTransition pt5=new PathTransition();
+    PathTransition pt6=new PathTransition();
+    PathTransition pt7=new PathTransition();
    
-    
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        
@@ -143,6 +157,35 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt4.setPath(pt4Path);
         pt4.setAutoReverse(true);
         pt4.play();
+        
+        Path pt5Path=new Path();
+        pt5Path.getElements().add(new MoveTo(30,24));
+        pt5Path.getElements().add(new HLineTo(453));
+        pt5.setNode(rectangle_7);
+        pt5.setDuration(Duration.seconds(2));
+        pt5.setCycleCount(Timeline.INDEFINITE);
+        pt5.setPath(pt5Path);     
+        pt5.play();
+        
+        Path pt6Path=new Path();
+        pt6Path.getElements().add(new MoveTo(30,24));
+        pt6Path.getElements().add(new HLineTo(453));
+        pt6.setNode(rectangle_8);
+        pt6.setDuration(Duration.seconds(2));
+        pt6.setCycleCount(Timeline.INDEFINITE);
+        pt6.setPath(pt6Path);     
+        pt6.setDelay(Duration.seconds(1));
+        pt6.play();
+        
+        Path pt7Path=new Path();
+        pt7Path.getElements().add(new MoveTo(30,24));
+        pt7Path.getElements().add(new HLineTo(453));
+        pt7.setNode(rectangle_9);
+        pt7.setDuration(Duration.seconds(2));
+        pt7.setCycleCount(Timeline.INDEFINITE);
+        pt7.setPath(pt7Path); 
+        pt7.setDelay(Duration.seconds(2));
+        pt7.play();
        /*
        rt12.setNode(obst12);
         rt12.setDuration(Duration.seconds(2.0));
@@ -160,6 +203,23 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         rt1.setCycleCount(Timeline.INDEFINITE);
         rt1.setAutoReverse(true);
         rt1.playFrom(Duration.seconds(1.0));
+        
+        rt2.setNode(circle_2);
+        rt2.setDuration(Duration.seconds(3.0));
+        rt2.setFromAngle(0);
+        rt2.setByAngle(360);
+        rt2.setCycleCount(Timeline.INDEFINITE);
+        //rt2.setAutoReverse(true);
+        rt2.playFrom(Duration.seconds(1.0));
+        
+        rt3.setNode(rectangle_6);
+        rt3.setDuration(Duration.seconds(12.0));
+        rt3.setFromAngle(0);
+        rt3.setByAngle(361);
+        rt3.setCycleCount(Timeline.INDEFINITE);
+        rt3.setAutoReverse(true);
+        rt3.playFrom(Duration.seconds(1.0));
+        
        
     }
     
