@@ -272,7 +272,7 @@ public class LevelTwoFXMLController implements Initializable {
         timer.play();
 
         Path path1 = new Path();
-        path1.getElements().add(new MoveTo(53.0, 15.0));
+        path1.getElements().add(new MoveTo(obst1.getWidth() / 2, obst1.getHeight() / 2));
         path1.getElements().add(new HLineTo(150.0));
         pt1.setNode(obst1);
         pt1.setDuration(Duration.seconds(1.5));
@@ -282,7 +282,7 @@ public class LevelTwoFXMLController implements Initializable {
         pt1.play();
 
         Path path2 = new Path();
-        path2.getElements().add(new MoveTo(53.0, 15.0));
+        path2.getElements().add(new MoveTo(obst2.getWidth() / 2, obst2.getHeight() / 2));
         path2.getElements().add(new HLineTo(-40.0));
         pt2.setNode(obst2);
         pt2.setDuration(Duration.seconds(1.5));
@@ -310,7 +310,7 @@ public class LevelTwoFXMLController implements Initializable {
         rt5.play();
 
         Path path6 = new Path();
-        path6.getElements().add(new MoveTo(45.0, 15.0));
+        path6.getElements().add(new MoveTo(obst6.getWidth() / 2, obst6.getHeight() / 2));
         path6.getElements().add(new VLineTo(-280.0));
         pt6.setNode(obst6);
         pt6.setDuration(Duration.seconds(6.0));
@@ -319,7 +319,7 @@ public class LevelTwoFXMLController implements Initializable {
         pt6.play();
 
         Path path7 = new Path();
-        path7.getElements().add(new MoveTo(45.0, 15.0));
+        path7.getElements().add(new MoveTo(obst7.getWidth() / 2, obst7.getHeight() / 2));
         path7.getElements().add(new VLineTo(-280.0));
         pt7.setNode(obst7);
         pt7.setDuration(Duration.seconds(6.0));
@@ -329,7 +329,7 @@ public class LevelTwoFXMLController implements Initializable {
         pt7.play();
 
         Path path8 = new Path();
-        path8.getElements().add(new MoveTo(15.0, 29.0));
+        path8.getElements().add(new MoveTo(obst8.getWidth() / 2, obst8.getHeight() / 2));
         path8.getElements().add(new HLineTo(380.0));
         pt8.setNode(obst8);
         pt8.setDuration(Duration.seconds(3.0));
@@ -344,7 +344,7 @@ public class LevelTwoFXMLController implements Initializable {
         rt8.play();
 
         Path path9 = new Path();
-        path9.getElements().add(new MoveTo(222.0, 5.0));
+        path9.getElements().add(new MoveTo(obst9.getWidth() / 2, obst9.getHeight() / 2));
         path9.getElements().add(new VLineTo(-50.0));
         pt9.setNode(obst9);
         pt9.setDuration(Duration.seconds(2.5));
