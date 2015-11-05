@@ -105,6 +105,8 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
     PathTransition pt5=new PathTransition();
     PathTransition pt6=new PathTransition();
     PathTransition pt7=new PathTransition();
+    PathTransition pt8=new PathTransition();
+    PathTransition pt9=new PathTransition();
    
     
    
@@ -132,19 +134,20 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         st1.setAutoReverse(true);
         st1.play();
         
+        
+        
         st2.setNode(rectangle_6_1);
-        st2.setDuration(Duration.seconds(2.0));
-        st2.setCycleCount(Timeline.INDEFINITE);
-         st2.setFromX(0.0);
-        st2.setToX(200.0);
-        st2.setByY(-2);
+        st2.setDuration(Duration.seconds(1.7));
+        st2.setCycleCount(Timeline.INDEFINITE);       
+        st2.setByY(0.2);
         st2.setAutoReverse(true);
         st2.play();
         
+        
         st3.setNode(rectangle_6_4);
-        st3.setDuration(Duration.seconds(2.0));
+        st3.setDuration(Duration.seconds(1.7));
         st3.setCycleCount(Timeline.INDEFINITE);
-        st3.setByY(-2);
+        st3.setByY(0.9);
         st3.setAutoReverse(true);
         st3.play();
         
@@ -192,7 +195,7 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt4.play();
         
         Path pt5Path=new Path();
-        pt5Path.getElements().add(new MoveTo(30,24));
+        pt5Path.getElements().add(new MoveTo(rectangle_7.getWidth() / 2d, rectangle_7.getHeight() / 2d));
         pt5Path.getElements().add(new HLineTo(453));
         pt5.setNode(rectangle_7);
         pt5.setDuration(Duration.seconds(2));
@@ -201,7 +204,7 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt5.play();
         
         Path pt6Path=new Path();
-        pt6Path.getElements().add(new MoveTo(30,24));
+        pt6Path.getElements().add(new MoveTo(rectangle_8.getWidth() / 2d, rectangle_8.getHeight() / 2d));
         pt6Path.getElements().add(new HLineTo(453));
         pt6.setNode(rectangle_8);
         pt6.setDuration(Duration.seconds(2));
@@ -211,7 +214,7 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt6.play();
         
         Path pt7Path=new Path();
-        pt7Path.getElements().add(new MoveTo(30,24));
+        pt7Path.getElements().add(new MoveTo(rectangle_9.getWidth() / 2d, rectangle_9.getHeight() / 2d));
         pt7Path.getElements().add(new HLineTo(453));
         pt7.setNode(rectangle_9);
         pt7.setDuration(Duration.seconds(2));
@@ -219,7 +222,28 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt7.setPath(pt7Path); 
         pt7.setDelay(Duration.seconds(2));
         pt7.play();
-
+        
+       
+        Path pt8Path=new Path();
+        pt8Path.getElements().add(new MoveTo(rectangle_6_2.getWidth() / 2d, rectangle_6_2.getHeight() / 2d));
+        pt8Path.getElements().add(new HLineTo(24));
+        pt8.setNode(rectangle_6_2);
+        pt8.setDuration(Duration.seconds(1.7));
+        pt8.setCycleCount(Timeline.INDEFINITE);
+        pt8.setPath(pt8Path); 
+        pt8.setAutoReverse(true);
+        pt8.play();
+        
+        Path pt9Path=new Path();
+        pt9Path.getElements().add(new MoveTo(rectangle_6_3.getWidth() / 2d, rectangle_6_3.getHeight() / 2d));
+        pt9Path.getElements().add(new HLineTo(-24));
+        pt9.setNode(rectangle_6_3);
+        pt9.setDuration(Duration.seconds(1.7));
+        pt9.setCycleCount(Timeline.INDEFINITE);
+        pt9.setPath(pt9Path); 
+        pt9.setAutoReverse(true);
+        pt9.play();
+        
         rt1.setNode(rectangle_5);
         rt1.setDuration(Duration.seconds(2.0));
         rt1.setFromAngle(-20);
@@ -265,6 +289,12 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         st1.jumpTo(Duration.ZERO);
         st1.stop();
         
+        st2.jumpTo(Duration.ZERO);
+        st2.stop();
+        
+        st3.jumpTo(Duration.ZERO);
+        st3.stop();
+        
         pt1.jumpTo(Duration.ZERO);
         pt1.stop();
         
@@ -277,8 +307,32 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt4.jumpTo(Duration.ZERO);
         pt4.stop();
         
+        pt5.jumpTo(Duration.ZERO);
+        pt5.stop();
+        
+        pt6.jumpTo(Duration.ZERO);
+        pt6.stop();
+        
+        pt7.jumpTo(Duration.ZERO);
+        pt7.stop();
+        
+        pt8.jumpTo(Duration.ZERO);
+        pt8.stop();
+        
+        pt9.jumpTo(Duration.ZERO);
+        pt9.stop();
+        
         rt1.jumpTo(Duration.seconds(1));
         rt1.stop();
+        
+        rt2.jumpTo(Duration.seconds(1));
+        rt2.stop();
+        
+        rt3.jumpTo(Duration.seconds(1));
+        rt3.stop();
+        
+        rt4.jumpTo(Duration.seconds(1));
+        rt4.stop();
        
     }
 
