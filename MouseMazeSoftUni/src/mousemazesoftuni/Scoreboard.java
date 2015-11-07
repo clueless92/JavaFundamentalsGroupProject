@@ -51,7 +51,7 @@ public class Scoreboard implements Serializable {
     //0 binary search
     private int findEntryIndex(int first, int last, long entryTime) {
         while (first != last) {
-            final int mid = (last + first) / 2;
+            final int mid = last + first >> 1;
             if (records.get(mid).time <= entryTime) {
                 first = mid + 1;
             } else {

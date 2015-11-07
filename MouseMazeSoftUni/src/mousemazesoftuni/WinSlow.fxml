@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mousemazesoftuni.WinSlowController">
    <children>
-      <Label layoutX="13.0" prefHeight="60.0" prefWidth="319.0" text="Поздравления! Спечелихте тази картинка на щастлива пица!" textAlignment="CENTER" wrapText="true">
+      <Label layoutX="13.0" prefHeight="60.0" prefWidth="319.0" text="Congratulations! You win this picture of a happy pizza!" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -19,14 +19,14 @@
             <Image url="@../res/pizzabig.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="27.0" layoutY="366.0" prefHeight="36.0" prefWidth="292.0" text="Резултата ви не беше достатъчно добър за да се класирате в топ 10." textAlignment="JUSTIFY" wrapText="true" />
-      <Button layoutX="209.0" layoutY="416.0" mnemonicParsing="false" onAction="#ok" prefHeight="25.0" prefWidth="52.0" text="ОК">
+      <Label layoutX="27.0" layoutY="366.0" prefHeight="36.0" prefWidth="292.0" text="Sadly, you were too slow to get in the top 10." textAlignment="JUSTIFY" wrapText="true" />
+      <Button layoutX="209.0" layoutY="416.0" mnemonicParsing="false" onAction="#ok" prefHeight="25.0" prefWidth="52.0" text="Yes">
          <effect>
             <InnerShadow />
          </effect>
       </Button>
-      <Label layoutX="27.0" layoutY="420.0" text="Опитайте отново?" />
-      <Button layoutX="269.0" layoutY="416.0" mnemonicParsing="false" onAction="#onExit" text="Изход">
+      <Label layoutX="27.0" layoutY="418.0" text="Try again?" />
+      <Button layoutX="269.0" layoutY="416.0" mnemonicParsing="false" onAction="#onExit" prefHeight="25.0" prefWidth="52.0" text="No">
          <effect>
             <InnerShadow />
          </effect>

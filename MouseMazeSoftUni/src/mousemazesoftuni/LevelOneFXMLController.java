@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mousemazesoftuni;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.KeyFrame;
 import javafx.animation.PathTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
@@ -17,15 +13,13 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.HLineTo;
 import javafx.scene.shape.MoveTo;
@@ -34,23 +28,22 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.VLineTo;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import static mousemazesoftuni.StartWindowFXMLController.stage;
 
-/**
- * FXML Controller class
- *
- */
-
-public class LevelOneFXMLController implements Initializable, EventHandler<WindowEvent>{
+public class LevelOneFXMLController implements Initializable {
+    
+    @FXML
+    private Rectangle gameField1;
+    @FXML
+    private Label chronoLabel;
     @FXML
     private Rectangle gameField;
     @FXML
     private Button endButton;
     @FXML
     private Circle circle_1;
-    private Path circle_2; 
+    private Path circle_2;
     @FXML
     private Rectangle rectangle_1;
     @FXML
@@ -81,17 +74,13 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
     private Path outterCircle;
     @FXML
     private Path innerCircle;
-    @FXML
-    private Arc halfCircle;
-    /**
-     * Initializes the controller class.
-     */
     
     //Scale objects
     ScaleTransition st1 = new ScaleTransition();
     ScaleTransition st2 = new ScaleTransition();
     ScaleTransition st3 = new ScaleTransition();
     
+    // ROtate objects
     RotateTransition rt1=new RotateTransition();
     RotateTransition rt2=new RotateTransition();
     RotateTransition rt3=new RotateTransition();
@@ -108,24 +97,29 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
     PathTransition pt8=new PathTransition();
     PathTransition pt9=new PathTransition();
    
-    
-   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
     }
     
     @FXML
     private void toggleStartAction(ActionEvent event) throws IOException {
         if (!startButton.isSelected()) {
             stopGame();
-            startButton.setText("START!");
+            startButton.setText("Start");
         } else {
             startGame();
-            startButton.setText("STOP!");
+            startButton.setText("Stop");
         }
     }
     private void startGame() {
+        hours = 0;
+        mins = 0;
+        secs = 0;
+        String print = String.format(" %02d : %02d : %02d ", hours, mins, secs);
+        chronoLabel.setText(print);
+        timer.setCycleCount(Timeline.INDEFINITE);
+        timer.play();
+        
         st1.setNode(circle_1);
         st1.setDuration(Duration.seconds(2.0));
         st1.setCycleCount(Timeline.INDEFINITE);
@@ -134,8 +128,6 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         st1.setAutoReverse(true);
         st1.play();
         
-        
-        
         st2.setNode(rectangle_6_1);
         st2.setDuration(Duration.seconds(1.7));
         st2.setCycleCount(Timeline.INDEFINITE);       
@@ -143,15 +135,12 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         st2.setAutoReverse(true);
         st2.play();
         
-        
         st3.setNode(rectangle_6_4);
         st3.setDuration(Duration.seconds(1.7));
         st3.setCycleCount(Timeline.INDEFINITE);
         st3.setByY(0.9);
         st3.setAutoReverse(true);
         st3.play();
-        
-        
         
         Path pt1Path=new Path();
         pt1Path.getElements().add(new MoveTo(30,12));
@@ -162,7 +151,6 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt1.setPath(pt1Path);
         pt1.setAutoReverse(true);
         pt1.play();
-        
         
         Path pt2Path=new Path();
         pt2Path.getElements().add(new MoveTo(30,12));
@@ -195,7 +183,8 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt4.play();
         
         Path pt5Path=new Path();
-        pt5Path.getElements().add(new MoveTo(rectangle_7.getWidth() / 2d, rectangle_7.getHeight() / 2d));
+        pt5Path.getElements().add(new MoveTo(
+                rectangle_7.getWidth() / 2d, rectangle_7.getHeight() / 2d));
         pt5Path.getElements().add(new HLineTo(453));
         pt5.setNode(rectangle_7);
         pt5.setDuration(Duration.seconds(2));
@@ -204,7 +193,8 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt5.play();
         
         Path pt6Path=new Path();
-        pt6Path.getElements().add(new MoveTo(rectangle_8.getWidth() / 2d, rectangle_8.getHeight() / 2d));
+        pt6Path.getElements().add(new MoveTo(
+                rectangle_8.getWidth() / 2d, rectangle_8.getHeight() / 2d));
         pt6Path.getElements().add(new HLineTo(453));
         pt6.setNode(rectangle_8);
         pt6.setDuration(Duration.seconds(2));
@@ -214,7 +204,8 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt6.play();
         
         Path pt7Path=new Path();
-        pt7Path.getElements().add(new MoveTo(rectangle_9.getWidth() / 2d, rectangle_9.getHeight() / 2d));
+        pt7Path.getElements().add(new MoveTo(
+                rectangle_9.getWidth() / 2d, rectangle_9.getHeight() / 2d));
         pt7Path.getElements().add(new HLineTo(453));
         pt7.setNode(rectangle_9);
         pt7.setDuration(Duration.seconds(2));
@@ -225,7 +216,8 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         
        
         Path pt8Path=new Path();
-        pt8Path.getElements().add(new MoveTo(rectangle_6_2.getWidth() / 2d, rectangle_6_2.getHeight() / 2d));
+        pt8Path.getElements().add(new MoveTo(
+                rectangle_6_2.getWidth() / 2d, rectangle_6_2.getHeight() / 2d));
         pt8Path.getElements().add(new HLineTo(24));
         pt8.setNode(rectangle_6_2);
         pt8.setDuration(Duration.seconds(1.7));
@@ -235,7 +227,8 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt8.play();
         
         Path pt9Path=new Path();
-        pt9Path.getElements().add(new MoveTo(rectangle_6_3.getWidth() / 2d, rectangle_6_3.getHeight() / 2d));
+        pt9Path.getElements().add(new MoveTo(
+                rectangle_6_3.getWidth() / 2d, rectangle_6_3.getHeight() / 2d));
         pt9Path.getElements().add(new HLineTo(-24));
         pt9.setNode(rectangle_6_3);
         pt9.setDuration(Duration.seconds(1.7));
@@ -259,8 +252,6 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         rt2.setCycleCount(Timeline.INDEFINITE);
         rt2.playFrom(Duration.seconds(1.0));
         
-       
-        
         rt3.setNode(innerCircle);
         rt3.setDuration(Duration.seconds(4.0));
         rt3.setByAngle(360);
@@ -272,8 +263,6 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         rt4.setByAngle(360);
         rt4.setCycleCount(Timeline.INDEFINITE);      
         rt4.playFrom(Duration.seconds(1.0));
-        
-       
     }
     
      private static boolean contains(Labeled labeled, double x, double y) {
@@ -284,8 +273,11 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         double bottom = top + labeled.getHeight() + 2 * tolerance;
         return left <= x && x <= right && top <= y && y <= bottom;
     }
+     
     private void stopGame(){
+        timer.stop();
         startButton.setSelected(false);
+        
         st1.jumpTo(Duration.ZERO);
         st1.stop();
         
@@ -322,45 +314,40 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         pt9.jumpTo(Duration.ZERO);
         pt9.stop();
         
-        rt1.jumpTo(Duration.seconds(1));
+        rt1.jumpTo(Duration.ZERO);
         rt1.stop();
         
-        rt2.jumpTo(Duration.seconds(1));
+        rt2.jumpTo(Duration.ZERO);
         rt2.stop();
         
-        rt3.jumpTo(Duration.seconds(1));
+        rt3.jumpTo(Duration.ZERO);
         rt3.stop();
         
-        rt4.jumpTo(Duration.seconds(1));
+        rt4.jumpTo(Duration.ZERO);
         rt4.stop();
        
     }
 
     @FXML
     private void onEnd(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("LevelTwoFXML.fxml"));
+        if (!startButton.isSelected()) {
+            return;
+        }
+        stage.close();
+        stopGame();
+        Parent root = FXMLLoader.load(getClass()
+                .getResource("LevelTwoFXML.fxml"));
         Scene scene = new Scene(root);
         stage = new Stage();
         stage.setScene(scene);
-        //stage.setOnHidden(this);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);
         stage.show();
     }
 
     @FXML
-    private void close(ActionEvent event) {
-        stage.close();
-    }
-
-    @Override
-    public void handle(WindowEvent event) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @FXML
     private void onMouseExited(MouseEvent event) throws IOException {
-         if (!startButton.isSelected()) {
+        if (!startButton.isSelected()) {
             return;
         }
         double fieldX = gameField.getLayoutX();
@@ -374,7 +361,7 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
             return;
         } 
         stopGame();
-        startButton.setText("Start!");
+        startButton.setText("Start");
         Parent root = FXMLLoader.load(getClass().getResource("Dialog.fxml"));
         Scene scene = new Scene(root);
         stage = new Stage();
@@ -384,4 +371,78 @@ public class LevelOneFXMLController implements Initializable, EventHandler<Windo
         stage.show();
     }
 
+    @FXML
+    private void onMouseExitedPane(MouseEvent event) throws IOException {
+        if (!startButton.isSelected()) {
+            return;
+        }
+        double fieldX = gameField.getLayoutX();
+        double fieldY = gameField.getLayoutY();
+        double x = event.getX() + fieldX;
+        double y = event.getY() + fieldY;
+        if (contains(startButton, x, y)) {
+            return;
+        }
+        if (contains(endButton, x, y)) {
+            return;
+        } 
+        stopGame();
+        startButton.setText("Start");
+        Parent root = FXMLLoader.load(getClass().getResource("Dialog.fxml"));
+        Scene scene = new Scene(root);
+        stage = new Stage();
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    private void onDragDetected(MouseEvent event) throws IOException {
+        if (!startButton.isSelected()) {
+            return;
+        }
+        double fieldX = gameField.getLayoutX();
+        double fieldY = gameField.getLayoutY();
+        double x = event.getX() + fieldX;
+        double y = event.getY() + fieldY;
+        if (contains(startButton, x, y)) {
+            return;
+        }
+        if (contains(endButton, x, y)) {
+            return;
+        } 
+        stopGame();
+        startButton.setText("Start");
+        Parent root = FXMLLoader.load(getClass().getResource("Dialog.fxml"));
+        Scene scene = new Scene(root);
+        stage = new Stage();
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setResizable(false);
+        stage.show();
+    }
+    
+    Timeline timer = new Timeline(new KeyFrame(Duration.seconds(1), new UpdateTimer()));
+    public static int hours = 0;
+    public static int mins = 0;
+    public static int secs = 0;
+    
+    class UpdateTimer implements EventHandler<ActionEvent> {
+
+        @Override
+        public void handle(ActionEvent event) {
+            secs++;
+            if (secs == 60) {
+                mins++;
+                secs = 0;
+                if (mins == 60) {
+                    hours++;
+                    mins = 0;
+                }
+            }
+            String print = String.format(" %02d : %02d : %02d ", hours, mins, secs);
+            chronoLabel.setText(print);
+        }
+    }
 }

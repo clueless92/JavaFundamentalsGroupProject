@@ -30,7 +30,7 @@
       <Rectangle fx:id="obst2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="30.0" layoutX="88.0" layoutY="156.0" stroke="RED" strokeType="INSIDE" width="106.0" />
       <Rectangle fx:id="obst6" arcHeight="5.0" arcWidth="5.0" fill="RED" height="30.0" layoutX="593.0" layoutY="614.0" stroke="RED" strokeType="INSIDE" width="90.0" />
       <Rectangle fx:id="obst7" arcHeight="5.0" arcWidth="5.0" fill="RED" height="30.0" layoutX="593.0" layoutY="614.0" stroke="RED" strokeType="INSIDE" width="90.0" />
-      <ToggleButton fx:id="toggleStart" focusTraversable="false" layoutX="19.0" layoutY="19.0" mnemonicParsing="false" onAction="#toggleStartAction" onDragDetected="#onDragDetected" text="Start!" textFill="#1f51ff">
+      <ToggleButton fx:id="toggleStart" focusTraversable="false" layoutX="19.0" layoutY="19.0" mnemonicParsing="false" onAction="#toggleStartAction" onDragDetected="#onDragDetected" text="Start" textFill="#1f51ff">
          <effect>
             <InnerShadow choke="0.69" color="#1f51ff" />
          </effect>
@@ -63,7 +63,7 @@
             <Cursor fx:constant="CROSSHAIR" />
          </cursor>
       </Label>
-      <Button fx:id="buttonRealEnd" focusTraversable="false" layoutX="412.0" layoutY="340.0" mnemonicParsing="false" onAction="#onRealEnd" prefHeight="25.0" prefWidth="82.0" text="Real Finish" textFill="#1f51ff">
+      <Button fx:id="buttonRealEnd" focusTraversable="false" layoutX="412.0" layoutY="340.0" mnemonicParsing="false" onAction="#onRealEnd" opacity="0.0" prefHeight="25.0" prefWidth="82.0" text="Real Finish" textFill="#1f51ff">
          <effect>
             <InnerShadow choke="0.69" color="#1f51ff" />
          </effect>
@@ -77,7 +77,7 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Polygon layoutX="547.0" layoutY="267.0" rotate="26.6" stroke="BLACK" strokeType="INSIDE">
+      <Polygon layoutX="545.0" layoutY="268.0" rotate="26.6" stroke="BLACK" strokeType="INSIDE">
         <points>
           <Double fx:value="-50.0" />
           <Double fx:value="40.0" />
@@ -94,7 +94,7 @@
          <contextMenu>
             <ContextMenu>
               <items>
-                <MenuItem mnemonicParsing="false" text="---МОСТ---" />
+                <MenuItem mnemonicParsing="false" text="---BRIDGE---" />
               </items>
             </ContextMenu>
          </contextMenu>
@@ -165,5 +165,6 @@
             <Double fx:value="-60.0" />
          </points>
       </Polygon>
+      <Rectangle fx:id="fakeWall" arcHeight="5.0" arcWidth="5.0" height="37.0" layoutX="374.0" layoutY="334.0" stroke="BLACK" strokeType="INSIDE" width="152.0" />
    </children>
 </AnchorPane>

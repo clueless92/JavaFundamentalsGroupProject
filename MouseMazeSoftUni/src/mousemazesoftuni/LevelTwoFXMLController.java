@@ -96,23 +96,25 @@ public class LevelTwoFXMLController implements Initializable {
     ScaleTransition st13 = new ScaleTransition();
 
     Timeline timer = new Timeline(new KeyFrame(Duration.seconds(1), new UpdateTimer()));
-    public int hours = 0;
-    public int min = 0;
-    public int sec = 0;
+    public int hours = LevelOneFXMLController.hours;
+    public int mins = LevelOneFXMLController.mins;
+    public int secs = LevelOneFXMLController.secs;
+    @FXML
+    private Rectangle fakeWall;
     class UpdateTimer implements EventHandler<ActionEvent> {
 
         @Override
         public void handle(ActionEvent event) {
-            sec++;
-            if (sec == 60) {
-                min++;
-                sec = 0;
-                if (min == 60) {
+            secs++;
+            if (secs == 60) {
+                mins++;
+                secs = 0;
+                if (mins == 60) {
                     hours++;
-                    min = 0;
+                    mins = 0;
                 }
             }
-            String print = String.format(" %02d : %02d : %02d ", hours, min, sec);
+            String print = String.format(" %02d : %02d : %02d ", hours, mins, secs);
             chronoLabel.setText(print);
         }
     }
@@ -123,7 +125,7 @@ public class LevelTwoFXMLController implements Initializable {
             return;
         }
         stopGame();
-        toggleStart.setText("Start!");
+        toggleStart.setText("Start");
 
         Parent root = FXMLLoader.load(getClass().getResource("Dialog.fxml"));
         Scene scene = new Scene(root);
@@ -156,7 +158,7 @@ public class LevelTwoFXMLController implements Initializable {
             return;
         }
         stopGame();
-        toggleStart.setText("Start!");
+        toggleStart.setText("Start");
         Parent root = FXMLLoader.load(getClass().getResource("Dialog.fxml"));
         Scene scene = new Scene(root);
         stage = new Stage();
@@ -166,13 +168,17 @@ public class LevelTwoFXMLController implements Initializable {
         stage.show();
     }
 
-    @FXML
     private void onExit(ActionEvent event) {
         Platform.exit();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        hours = LevelOneFXMLController.hours;
+        mins = LevelOneFXMLController.mins;
+        secs = LevelOneFXMLController.secs;
+        String print = String.format(" %02d : %02d : %02d ", hours, mins, secs);
+        chronoLabel.setText(print);
     }
 
     @FXML
@@ -194,6 +200,8 @@ public class LevelTwoFXMLController implements Initializable {
 
     private void stopGame() {
         timer.stop();
+        
+        fakeWall.setVisible(true);
         toggleStart.setSelected(false);
         buttonRealEnd.setOpacity(0.0);
         labelBridge.setOpacity(0.0);
@@ -252,7 +260,7 @@ public class LevelTwoFXMLController implements Initializable {
             return;
         }
         stopGame();
-        toggleStart.setText("Start!");
+        toggleStart.setText("Start");
         Parent root = FXMLLoader.load(getClass().getResource("Dialog.fxml"));
         Scene scene = new Scene(root);
         stage = new Stage();
@@ -263,10 +271,10 @@ public class LevelTwoFXMLController implements Initializable {
     }
 
     private void startGame() {
-        hours = 0;
-        min = 0;
-        sec = 0;
-        String print = String.format(" %02d : %02d : %02d ", hours, min, sec);
+        hours = LevelOneFXMLController.hours;
+        mins = LevelOneFXMLController.mins;
+        secs = LevelOneFXMLController.secs;
+        String print = String.format(" %02d : %02d : %02d ", hours, mins, secs);
         chronoLabel.setText(print);
         timer.setCycleCount(Timeline.INDEFINITE);
         timer.play();
@@ -388,10 +396,10 @@ public class LevelTwoFXMLController implements Initializable {
     private void toggleStartAction(ActionEvent event) throws IOException {
         if (!toggleStart.isSelected()) {
             stopGame();
-            toggleStart.setText("Start!");
+            toggleStart.setText("Start");
         } else {
             startGame();
-            toggleStart.setText("Stop!");
+            toggleStart.setText("Stop");
         }
     }
 
@@ -400,32 +408,24 @@ public class LevelTwoFXMLController implements Initializable {
         if (!toggleStart.isSelected()) {
             return;
         }
-        long time = sec + min * 60L + hours * 3600L;
+        stage.close();
+        fakeWall.setVisible(false);
+        fakeWinLabel.setOpacity(0.0);
+        stopGame();
+        toggleStart.setText("Start");
+        long time = secs + mins * 60L + hours * 3600L;
+        Parent root = null;
         if (StartWindowFXMLController.scoreboard.requestEntry(time)) {
-            fakeWinLabel.setOpacity(0.0);
-            stopGame();
-            toggleStart.setText("Start!");
-            
-            Parent root = FXMLLoader.load(getClass().getResource("Win.fxml"));
-            Scene scene = new Scene(root);
-            stage = new Stage();
-            stage.setScene(scene);
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setResizable(false);
-            stage.show();
-            
+            root = FXMLLoader.load(getClass().getResource("Win.fxml"));
         } else {
-            fakeWinLabel.setOpacity(0.0);
-            stopGame();
-            toggleStart.setText("Start!");
-            Parent root = FXMLLoader.load(getClass().getResource("WinSlow.fxml"));
-            Scene scene = new Scene(root);
-            stage = new Stage();
-            stage.setScene(scene);
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setResizable(false);
-            stage.show();
+            root = FXMLLoader.load(getClass().getResource("WinSlow.fxml"));
         }
+        Scene scene = new Scene(root);
+        stage = new Stage();
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML
@@ -433,8 +433,8 @@ public class LevelTwoFXMLController implements Initializable {
         if (!toggleStart.isSelected()) {
             return;
         }
+        fakeWall.setVisible(false);
         buttonRealEnd.setOpacity(1.0);
         fakeWinLabel.setOpacity(1.0);
     }
-
 }

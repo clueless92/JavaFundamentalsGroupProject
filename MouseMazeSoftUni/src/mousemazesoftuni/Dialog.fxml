@@ -14,12 +14,12 @@
   <children>
     <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
       <children>
-        <Label fx:id="messageLabel" text="Провалихте се!" textAlignment="LEFT" wrapText="true">
+        <Label fx:id="messageLabel" text="You FAILED!" textAlignment="LEFT" wrapText="true">
           <font>
             <Font name="System Bold" size="13.0" />
           </font>
         </Label>
-        <Label fx:id="detailsLabel" text="Искате ли да опитате отново?" textAlignment="LEFT" wrapText="true">
+        <Label fx:id="detailsLabel" text="Do you want to try again?" textAlignment="LEFT" wrapText="true">
           <font>
             <Font size="12.0" />
           </font>
@@ -41,7 +41,7 @@
           </HBox.margin>
         </HBox>
         <Pane maxWidth="+Infinity" HBox.hgrow="ALWAYS" />
-        <Button fx:id="yesButton" cancelButton="true" minWidth="80.0" mnemonicParsing="false" onAction="#yesButtonAction" text="Да!" HBox.hgrow="NEVER">
+        <Button fx:id="yesButton" cancelButton="true" minWidth="80.0" mnemonicParsing="false" onAction="#yesButtonAction" text="Yes!" HBox.hgrow="NEVER">
           <HBox.margin>
             <Insets />
           </HBox.margin>
@@ -51,7 +51,7 @@
         </Button>
         <HBox fx:id="okParent" alignment="CENTER">
           <children>
-            <Button fx:id="noButton" minWidth="80.0" mnemonicParsing="false" onAction="#noButtonAction" text="Не :(" HBox.hgrow="NEVER">
+            <Button fx:id="noButton" minWidth="80.0" mnemonicParsing="false" onAction="#noButtonAction" text="No :(" HBox.hgrow="NEVER">
               <HBox.margin>
                 <Insets left="14.0" />
               </HBox.margin>
