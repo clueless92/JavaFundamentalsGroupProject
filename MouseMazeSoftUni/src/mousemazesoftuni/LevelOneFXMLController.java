@@ -34,8 +34,6 @@ import static mousemazesoftuni.StartWindowFXMLController.stage;
 public class LevelOneFXMLController implements Initializable {
     
     @FXML
-    private Rectangle gameField1;
-    @FXML
     private Label chronoLabel;
     @FXML
     private Rectangle gameField;
@@ -43,7 +41,6 @@ public class LevelOneFXMLController implements Initializable {
     private Button endButton;
     @FXML
     private Circle circle_1;
-    private Path circle_2;
     @FXML
     private Rectangle rectangle_1;
     @FXML
@@ -84,7 +81,6 @@ public class LevelOneFXMLController implements Initializable {
     RotateTransition rt1=new RotateTransition();
     RotateTransition rt2=new RotateTransition();
     RotateTransition rt3=new RotateTransition();
-    RotateTransition rt4=new RotateTransition();
     
     //Move objects
     PathTransition pt1=new PathTransition();
@@ -245,24 +241,17 @@ public class LevelOneFXMLController implements Initializable {
         rt1.setAutoReverse(true);
         rt1.playFrom(Duration.seconds(1.0));
         
-        rt2.setNode(circle_2);
-        rt2.setDuration(Duration.seconds(3.0));
-        rt2.setFromAngle(0);
+        rt2.setNode(innerCircle);
+        rt2.setDuration(Duration.seconds(4.0));
         rt2.setByAngle(360);
-        rt2.setCycleCount(Timeline.INDEFINITE);
+        rt2.setCycleCount(Timeline.INDEFINITE);      
         rt2.playFrom(Duration.seconds(1.0));
         
-        rt3.setNode(innerCircle);
-        rt3.setDuration(Duration.seconds(4.0));
+        rt3.setNode(outterCircle);
+        rt3.setDuration(Duration.seconds(7.0));
         rt3.setByAngle(360);
         rt3.setCycleCount(Timeline.INDEFINITE);      
         rt3.playFrom(Duration.seconds(1.0));
-        
-        rt4.setNode(outterCircle);
-        rt4.setDuration(Duration.seconds(7.0));
-        rt4.setByAngle(360);
-        rt4.setCycleCount(Timeline.INDEFINITE);      
-        rt4.playFrom(Duration.seconds(1.0));
     }
     
      private static boolean contains(Labeled labeled, double x, double y) {
@@ -322,9 +311,6 @@ public class LevelOneFXMLController implements Initializable {
         
         rt3.jumpTo(Duration.ZERO);
         rt3.stop();
-        
-        rt4.jumpTo(Duration.ZERO);
-        rt4.stop();
        
     }
 
@@ -423,7 +409,8 @@ public class LevelOneFXMLController implements Initializable {
         stage.show();
     }
     
-    Timeline timer = new Timeline(new KeyFrame(Duration.seconds(1), new UpdateTimer()));
+    Timeline timer = new Timeline(
+            new KeyFrame(Duration.seconds(1), new UpdateTimer()));
     public static int hours = 0;
     public static int mins = 0;
     public static int secs = 0;
@@ -441,7 +428,8 @@ public class LevelOneFXMLController implements Initializable {
                     mins = 0;
                 }
             }
-            String print = String.format(" %02d : %02d : %02d ", hours, mins, secs);
+            String print = String
+                    .format(" %02d : %02d : %02d ", hours, mins, secs);
             chronoLabel.setText(print);
         }
     }
