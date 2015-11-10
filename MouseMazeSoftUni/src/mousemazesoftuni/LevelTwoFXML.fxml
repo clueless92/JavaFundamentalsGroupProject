@@ -102,7 +102,7 @@
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Label fx:id="fakeWinLabel" layoutX="142.0" layoutY="450.0" opacity="0.0" text="Това не беше истинския финал, но другия е. Обещавам!" textFill="WHITE" />
+      <Label fx:id="fakeWinLabel" layoutX="60.0" layoutY="528.0" opacity="0.0" text="Това не беше истинския финал, но другия е. Обещавам!" textFill="WHITE" />
       <Polygon layoutX="385.0" layoutY="259.0" rotate="-18.4" stroke="BLACK" strokeType="INSIDE">
          <points>
             <Double fx:value="-50.0" />
