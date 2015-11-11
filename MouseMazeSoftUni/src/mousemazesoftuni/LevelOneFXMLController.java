@@ -239,19 +239,19 @@ public class LevelOneFXMLController implements Initializable {
         rt1.setByAngle(43);
         rt1.setCycleCount(Timeline.INDEFINITE);
         rt1.setAutoReverse(true);
-        rt1.playFrom(Duration.seconds(1.0));
+        rt1.playFrom(Duration.ZERO);
         
         rt2.setNode(innerCircle);
         rt2.setDuration(Duration.seconds(4.0));
         rt2.setByAngle(360);
         rt2.setCycleCount(Timeline.INDEFINITE);      
-        rt2.playFrom(Duration.seconds(1.0));
+        rt2.playFrom(Duration.ZERO);
         
         rt3.setNode(outterCircle);
         rt3.setDuration(Duration.seconds(7.0));
         rt3.setByAngle(360);
         rt3.setCycleCount(Timeline.INDEFINITE);      
-        rt3.playFrom(Duration.seconds(1.0));
+        rt3.playFrom(Duration.ZERO);
     }
     
      private static boolean contains(Labeled labeled, double x, double y) {
